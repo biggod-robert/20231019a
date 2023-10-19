@@ -20,4 +20,26 @@ function viajar(){
     return $exit;//retorna el calculo
 }
 
+function unnuevoregistro(){
+
+    $exit = 0;// se inicializa la variable
+    //se hace la conexion con la base de datos
+    $conexion= new mysqli('localhost', 'root', 'root', 'tour_people');
+
+    $sql = "select 2+1 ";
+    $sql .= "as suma";//
+    $resultado = $conexion->query($sql);
+
+    //recorre el recordset
+    while($fila = mysqli_fetch_assoc($resultado))
+    {
+        //incluye o acumula
+        $exit += $fila['suma'];
+    }
+    return $exit;//retorna 
+
+    
+}
+
+
 ?>

@@ -36,12 +36,38 @@ function unnuevoregistro(){
         //incluye o acumula
         $exit += $fila['suma'];
     }
+
+    $conexion->close();//cierra la conexion
     return $exit;//retorna
-     
-    $conexion->close()
+
+    
 
     
 }
 
+function unnuevocalculo(){
+
+    $exit = 0;// se inicializa la variable
+    //se hace la conexion con la base de datos
+    $conexion= new mysqli('localhost', 'root', 'root', 'tour_people');
+
+    $sql = "select 10 as n1, 20 as n2";
+    $resultado = $conexion->query($sql);
+
+    //recorre el recordset
+    while($fila = mysqli_fetch_assoc($resultado))
+    {
+        //incluye o acumula
+        $exit = $fila['n1'] + $fila['n2'];
+
+    }
+
+    $conexion->close();//cierra la conexion
+    return $exit;//retorna
+
+    
+
+    
+}
 
 ?>

@@ -11,4 +11,6 @@ echo viajar();
 echo "<br>";//hace un salto de linea
 
 echo unnuevoregistro();//se invoca la funcion unnuevoregistro
+echo "<br>";
+echo unnuevocalculo();
 ?>

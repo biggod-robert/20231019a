@@ -170,7 +170,8 @@ function actualizar($sitio, $usuario){
     //se hace la conexion con la base de datos
     $conexion= new mysqli('localhost', 'root', 'root', 'tour_people');
     $sql = "UPDATE registro SET sitio = '$sitio' where Id = '$usuario';"; //se ejecuta una consulta
-    //recorre el recordset
+    $resultado = $conexion->query($sql);//recorre el recordset
+    //if($resultado == true){
 
     
     $conexion->close(); //Cerramos la conexion.
@@ -196,6 +197,31 @@ function mostrar_sitio($usuario){
 
     return $salida;
 }
+function cambiar_sitio($frase, $usuario){
 
+    $exit = "";// se inicializa la variable
+    //se hace la conexion con la base de datos
+    $conexion= new mysqli('localhost', 'root', 'root', 'tour_people');
+    $sql = "UPDATE registro SET invitacion = '$frase' where Id = '$usuario';"; //se ejecuta una consulta
+    $resultado = $conexion->query($sql);//recorre el recordset
+
+    if($resultado == true){
+    
+        while($fila = mysqli_fetch_assoc($resultado)){
+            $salida .= "<a href='". $fila[$frase]. "'>";
+            $salida .= $frase;
+            $salida .= "</a>";
+        }
+    
+}
+    
+
+
+
+    
+    $conexion->close(); //Cerramos la conexion.
+
+    return $exit; // retorna LA FUNCION.
+}
 
 ?>

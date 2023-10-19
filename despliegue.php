@@ -22,8 +22,9 @@ echo "<br>";
 echo insertar_usuario('78321', 'dayana', 'maria', '2003-11-15', '18', 'dayis@gmail.com', 'deyi4532', 'youtube');
 echo borrarUsuario('90564');
 echo "<br>";
-echo actualizar('12345','https://www.mercadolibre.com.co/');
+echo actualizar('https://www.mercadolibre.com.co/','12345');
 echo "<br>";
 echo mostrar_sitio('41212');
+echo cambiar_sitio('varvaro', '11209');
 
 ?>

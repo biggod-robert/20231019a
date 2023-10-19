@@ -12,8 +12,18 @@ echo "<br>";//hace un salto de linea
 
 echo unnuevoregistro();//se invoca la funcion unnuevoregistro
 echo "<br>";
-echo unnuevocalculo()."<hr>";
+echo unnuevocalculo();
 echo "<br>";
 
 echo calculo_edad();
+echo "<br>";
+echo contar_usuario();
+echo "<br>";
+echo insertar_usuario('78321', 'dayana', 'maria', '2003-11-15', '18', 'dayis@gmail.com', 'deyi4532', 'youtube');
+echo borrarUsuario('90564');
+echo "<br>";
+echo actualizar('12345','https://www.mercadolibre.com.co/');
+echo "<br>";
+echo mostrar_sitio('41212');
+
 ?>

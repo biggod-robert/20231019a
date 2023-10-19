@@ -70,4 +70,73 @@ function unnuevocalculo(){
     
 }
 
+function calculo_edad(){
+
+    $edad = "eres mayor de edad";//se inicializa la variable de texto
+    $edad2 = "eres menor de edad";
+    $exit = 0;// se inicializa la variable
+    //se hace la conexion con la base de datos
+    $conexion= new mysqli('localhost', 'root', 'root', 'tour_people');
+
+    $sql = "select 21 as edad";
+    $resultado = $conexion->query($sql);
+
+    //recorre el recordset
+    while($fila = mysqli_fetch_assoc($resultado))
+    {
+        //incluye o acumula
+        $exit = $fila['edad'];
+
+        if($exit >= 18){
+            $exit = $exit. ' '. $edad;//imprime la edad si es mayor
+            
+        }else{
+            $exit = $exit. ' '. $edad2;//imprime la edad si es menor
+        }
+        
+
+    }
+
+    $conexion->close();//cierra la conexion
+    return $exit;//retorna
+
+
+
+ 
+}
+
+function contar_usuario(){
+
+    $exit = 0;// se inicializa la variable
+    //se hace la conexion con la base de datos
+    $conexion= new mysqli('localhost', 'root', 'root', 'tour_people');
+
+    $sql = "select count(nombre) from registro";
+    $resultado = $conexion->query($sql);
+
+    //recorre el recordset
+    while($fila = mysqli_fetch_assoc($resultado))
+    {
+        //incluye o acumula
+        $exit = $fila['edad'];
+
+        if($exit >= 18){
+            $exit = $exit. ' '. $edad;//imprime la edad si es mayor
+            
+        }else{
+            $exit = $exit. ' '. $edad2;//imprime la edad si es menor
+        }
+        
+
+    }
+
+    $conexion->close();//cierra la conexion
+    return $exit;//retorna
+
+
+
+ 
+}
+
+
 ?>

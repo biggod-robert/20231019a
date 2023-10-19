@@ -12,5 +12,8 @@ echo "<br>";//hace un salto de linea
 
 echo unnuevoregistro();//se invoca la funcion unnuevoregistro
 echo "<br>";
-echo unnuevocalculo();
+echo unnuevocalculo()."<hr>";
+echo "<br>";
+
+echo calculo_edad();
 ?>
